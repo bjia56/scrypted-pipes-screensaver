@@ -14,7 +14,7 @@ MAZE_PATH = os.path.join(os.path.dirname(__file__), 'maze.py')
 COSMO_PYTHON_VERSION = "3.13.1"
 COSMO_PYTHON_TAG = "cpython-v3.13.1-build.1"
 COSMO_PYTHON = f"https://github.com/bjia56/portable-python/releases/download/{COSMO_PYTHON_TAG}/python-{COSMO_PYTHON_VERSION}-cosmo-unknown.zip"
-DOWNLOAD_CACHE_BUST = f"{platform.system()}-{platform.architecture()}-20241223-0"
+DOWNLOAD_CACHE_BUST = f"{platform.system()}-{platform.machine()}-20241223-1"
 
 APE_ARM64 = "https://cosmo.zip/pub/cosmos/bin/ape-arm64.elf"
 APE_X86_64 = "https://cosmo.zip/pub/cosmos/bin/ape-x86_64.elf"
@@ -94,6 +94,7 @@ class PipesScreensaverPlugin(ScryptedDeviceBase, StreamService, DeviceProvider):
                     f.write(data)
             if extract:
                 extract(tmp, fullpath)
+                os.remove(tmp)
             else:
                 os.rename(tmp, fullpath)
             with open(CACHEBUST_PATH, 'w') as f:
