@@ -118,10 +118,10 @@ class PipesScreensaverPlugin(ScryptedDeviceBase, StreamService, DeviceProvider):
         termsvc_direct = await scrypted_sdk.sdk.connectRPCObject(termsvc)
         if self.ape:
             return await termsvc_direct.connectStream(input, {
-                'cmd': [self.ape, self.exe, MAZE_PATH, '-s', 'THICK'],
+                'cmd': [self.ape, self.exe, MAZE_PATH, '-s', 'THICK', '-f', '20'],
             })
         return await termsvc_direct.connectStream(input, {
-            'cmd': [self.exe, MAZE_PATH, '-s', 'THICK'],
+            'cmd': [self.exe, MAZE_PATH, '-s', 'THICK', '-f', '20'],
         })
 
 
