@@ -29,7 +29,8 @@
          "default": "3.13",
          "options": {
             "default": {
-               "distribution": "cosmo"
+               "distribution": "cosmo",
+               "abiflags": "t"
             }
          }
       },
