@@ -25,6 +25,14 @@
    "scrypted": {
       "name": "Pipes Screensaver",
       "runtime": "python",
+      "pythonVersion": {
+         "default": "3.13",
+         "options": {
+            "default": {
+               "distribution": "cosmo"
+            }
+         }
+      },
       "type": "API",
       "interfaces": [
          "DeviceProvider",
